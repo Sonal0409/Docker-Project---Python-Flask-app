@@ -14,4 +14,4 @@ spec: # 3 things we specify on the deployment
     spec:
       containers: # list of containers to run in the pod
       - name: c1 # name of the container
-        image: leaddevops/kubeserve:v1 # image to use for the container
+        image: sonal04/myimageaws
