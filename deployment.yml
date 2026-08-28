@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+spec: # 3 things we specify on the deployment 
+  replicas: 1 # how many pods to run - Desired count of pods
+  selector:
+    matchLabels:
+      app: kubeserve # Current count of pods with this label
+  template: # a pod template or information to create pods
+    metadata:
+      labels:
+        app: kubeserve # label to identify the pod
+    spec:
+      containers: # list of containers to run in the pod
+      - name: c1 # name of the container
+        image: leaddevops/kubeserve:v1 # image to use for the container
